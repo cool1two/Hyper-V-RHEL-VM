@@ -53,7 +53,7 @@ fi
 # Hyperv tools
 #
 echo "Installing Hyper-V tools"
-dnf install -y hyperv-tools
+dnf install -y hyperv-tools hyperv-daemons
 
 # Load the Hyper-V kernel module
 echo "Load Hyper-V kernel module"
