@@ -103,6 +103,19 @@ chmod +x ~/.xsession
 # Change the allowed_users
 echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
 
+tee /etc/polkit-1/rules.d/50-xrdp.rules << 'EOF'
+polkit.addRule(function(action, subject) {
+    if ((action.id == "org.freedesktop.login1.reboot" ||
+        action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
+        action.id == "org.freedesktop.login1.power-off" ||
+        action.id == "org.freedesktop.login1.power-off-multiple-sessions") &&
+        subject.isInGroup("wheel")) {
+        return polkit.Result.YES;
+    }
+});
+EOF
+chmod 0644 /etc/polkit-1/rules.d/50-xrdp.rules
+
 # Open port
 firewall-cmd --add-port=3389/tcp --permanent
 firewall-cmd --reload
