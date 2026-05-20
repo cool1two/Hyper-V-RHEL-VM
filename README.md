@@ -8,7 +8,7 @@
 
 ## Quick install code.
 ```bash
-git clone https://github.com/EtienneBarbier/Hyper-V-RHEL-VM.git
+git clone https://github.com/cool1two/Hyper-V-RHEL-VM.git
 cd Hyper-V-RHEL-VM
 chmod +x install_configure_esm_rhel.sh
 sudo ./install_configure_esm_rhel.sh
@@ -25,7 +25,7 @@ For another platform or if you are facing any troubles, please refer to your com
 
 ## Activate Hyper-V on Windows 10
 
-To be able to use Hyper-V on Windows 10, you first need to enable it.
+To use Hyper-V on Windows 10, you first need to enable it.
 To do that, run the following command in **PowerShell** as Administrator.
 
 ```bash
@@ -49,7 +49,7 @@ Then type the following command, and your **Username** will be prompted.
 echo $env:Username
 ```
 
-Once you know your **Username**, you need to run **Powershell** but as **Administrator** and type de following command by replacing `<USERNAME>` with your **Username**. This will add the user to Hyper-V Administrators group.
+Once you know your **Username**, you need to run **Powershell** but as **Administrator** and type de following command by replacing `<USERNAME>` with your **Username**. This will add the user to the Hyper-V Administrators group.
 
 For Windows 11 :
 
